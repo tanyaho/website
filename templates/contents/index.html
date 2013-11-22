@@ -1,0 +1,11 @@
+{% extends "site_base.html" %}
+{% load menu %}
+{% block body %}
+<h1>{{ content.title }}</h1>
+{{ content.description }}
+<ul>
+    {% for image in imagecollection %}
+    <li><img src='/{{ image.url|cut:"contents/" }}' title="{{ image.alt }}"/></li>
+    {% endfor %}
+</ul>
+{% endblock %}
